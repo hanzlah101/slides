@@ -4,6 +4,9 @@ index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2
 diff --git a/node_modules/@open-slide/core/.bun-tag-9fa703aaaeba1c75 b/.bun-tag-9fa703aaaeba1c75
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/node_modules/@open-slide/core/.bun-tag-ad98ddbb2e0aa7ff b/.bun-tag-ad98ddbb2e0aa7ff
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/node_modules/@open-slide/core/.bun-tag-b2f9bfda17bf44f9 b/.bun-tag-b2f9bfda17bf44f9
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
@@ -11,7 +14,7 @@ diff --git a/node_modules/@open-slide/core/.bun-tag-eb787789a20b613a b/.bun-tag-
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/src/app/components/sidebar/sidebar.tsx b/src/app/components/sidebar/sidebar.tsx
-index 2e82c523558fc37229b9e756dce826fcec8d09d3..1253b849a53a53547f89882fcb22d6817e1055ff 100644
+index 2e82c523558fc37229b9e756dce826fcec8d09d3..3fcd25ec552918d6e5f9d1fcf900beb4a6bfe79f 100644
 --- a/src/app/components/sidebar/sidebar.tsx
 +++ b/src/app/components/sidebar/sidebar.tsx
 @@ -1,7 +1,26 @@
@@ -57,7 +60,7 @@ index 2e82c523558fc37229b9e756dce826fcec8d09d3..1253b849a53a53547f89882fcb22d681
 -          {t.home.appTitle}
 +        <BrandIcon className="size-5 shrink-0" />
 +        <h1 className="flex items-center">
-+          <BrandWordmark label={t.home.appTitle} className="h-[11px] w-auto" />
++          <BrandWordmark label={t.home.appTitle} className="h-[14px] w-auto" />
          </h1>
        </div>
  
