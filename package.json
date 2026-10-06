@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "open-slide dev",
-    "build": "open-slide build",
+    "build": "open-slide build && cp assets/og.png dist/og.png",
     "preview": "open-slide preview",
     "sync:skills": "open-slide sync:skills"
   },

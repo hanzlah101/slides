@@ -4,13 +4,13 @@
 
 <h1 align="center">Slides</h1>
 
-<p align="center">Lesson decks written as React code — animated, presentable in the browser, exportable to PowerPoint.</p>
+<p align="center"><strong>Lessons that move.</strong><br />Animated lesson decks you build in code and present in the browser.</p>
 
 ## Decks
 
 | Deck | Path | Pages |
 | --- | --- | --- |
-| Flowcharts — Lesson 01 | [`slides/01-flow-charts`](./slides/01-flow-charts/index.tsx) | 17 |
+| Flowcharts, Lesson 01 | [`slides/01-flow-charts`](./slides/01-flow-charts/index.tsx) | 17 |
 
 ## Getting started
 
@@ -50,8 +50,11 @@ See [`AGENTS.md`](./AGENTS.md) for the full authoring guide.
 
 ## Deploy
 
-`vercel.json` is preconfigured — run `bunx vercel --prod`, or import the repo on Vercel.
+`vercel.json` and `netlify.toml` are preconfigured. Run `bunx vercel --prod`, or import the repo on Vercel or Netlify.
 
 ## Branding
 
-Built on [open-slide](https://open-slide.dev). The app name, tab title, favicon and sidebar logo are set by [`patches/@open-slide%2Fcore@2.0.1.patch`](./patches), which `bun install` applies automatically. Upgrading `@open-slide/core` means regenerating it with `bun patch @open-slide/core`.
+The social preview image is `assets/og.png` (1200 × 630), copied into `dist/` by `bun run build`.
+
+
+Built on [open-slide](https://open-slide.dev). The app name, tab title, favicon, sidebar logo and social preview tags are set by [`patches/@open-slide%2Fcore@2.0.1.patch`](./patches), which `bun install` applies automatically. Upgrading `@open-slide/core` means regenerating it with `bun patch @open-slide/core`.
