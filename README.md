@@ -1,8 +1,9 @@
-<p align="center">
-  <img src="./assets/logo.svg" width="96" alt="Slides logo" />
-</p>
-
-<h1 align="center">Slides</h1>
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/logo-dark.svg" />
+    <img src="./assets/logo-light.svg" width="280" alt="Slides" />
+  </picture>
+</h1>
 
 <p align="center"><strong>Lessons that move.</strong><br />Animated lesson decks you build in code and present in the browser.</p>
 
