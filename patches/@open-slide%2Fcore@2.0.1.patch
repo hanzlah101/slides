@@ -4,21 +4,43 @@ index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2
 diff --git a/node_modules/@open-slide/core/.bun-tag-9fa703aaaeba1c75 b/.bun-tag-9fa703aaaeba1c75
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/node_modules/@open-slide/core/.bun-tag-b2f9bfda17bf44f9 b/.bun-tag-b2f9bfda17bf44f9
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/src/app/components/sidebar/sidebar.tsx b/src/app/components/sidebar/sidebar.tsx
-index 2e82c523558fc37229b9e756dce826fcec8d09d3..d62ca55508dcd0333fad54dcbd0ed0dc28d4fae0 100644
+index 2e82c523558fc37229b9e756dce826fcec8d09d3..6b254969611393c880b927fd089b0d58898f5fb2 100644
 --- a/src/app/components/sidebar/sidebar.tsx
 +++ b/src/app/components/sidebar/sidebar.tsx
-@@ -1,7 +1,7 @@
+@@ -1,7 +1,15 @@
  import { Plus, Search } from 'lucide-react';
  import { useEffect, useRef, useState } from 'react';
  import { toast } from 'sonner';
 -import logo from '@/assets/open-slide.png';
-+const logo = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E %3Crect width="64" height="64" rx="15" fill="%230d1a2b"/%3E %3Cpath d="M45 16.5 H28 A8.75 8.75 0 0 0 28 34 H36 A8.75 8.75 0 0 1 36 51.5 H22" fill="none" stroke="%23eaf2fb" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/%3E %3Ccircle cx="45" cy="16.5" r="6" fill="%23ffb547"/%3E %3Cpath d="M23 43.5 L13.5 51.5 L23 59.5 Z" fill="%23eaf2fb" stroke="%23eaf2fb" stroke-width="2" stroke-linejoin="round"/%3E%3C/svg%3E';
++const logo = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="14" fill="%23000"/%3E%3Csvg x="11" y="12" width="42" height="40" viewBox="16.53 50.3 1467.76 1399.41" fill="%23fff"%3E%3Cg transform="translate%2816 50%29"%3E%3Cpath d="M584.441 246.707H12.531a8.646 8.646 0 0 0-8.203 11.383l156.684 470.05a16.65 16.65 0 0 0 15.793 11.387h571.91a8.64 8.64 0 0 0 7.015-3.593 8.64 8.64 0 0 0 1.192-7.793L600.238 258.09a16.65 16.65 0 0 0-15.797-11.383"/%3E%3Cpath d="M857.633 1153.242h571.91a8.65 8.65 0 0 0 7.016-3.59 8.65 8.65 0 0 0 1.187-7.793l-156.684-470.05a16.65 16.65 0 0 0-15.792-11.383H693.36a8.66 8.66 0 0 0-7.02 3.59 8.65 8.65 0 0 0-1.188 7.793l156.684 470.05a16.645 16.645 0 0 0 15.797 11.383"/%3E%3Cpath d="M1291.195.297h-898.57a8.64 8.64 0 0 0-7.016 3.594 8.64 8.64 0 0 0-1.191 7.793l156.684 470.05a16.65 16.65 0 0 0 15.796 11.383h898.57a8.646 8.646 0 0 0 8.204-11.383l-156.684-470.05A16.65 16.65 0 0 0 1291.195.297"/%3E%3Cpath d="M911.102 906.883H12.532a8.65 8.65 0 0 0-7.016 3.59 8.65 8.65 0 0 0-1.188 7.793l156.684 470.05a16.65 16.65 0 0 0 15.793 11.387h898.57a8.64 8.64 0 0 0 7.016-3.594 8.65 8.65 0 0 0 1.191-7.793l-156.684-470.05a16.65 16.65 0 0 0-15.796-11.383"/%3E%3C/g%3E%3C/svg%3E%3C/svg%3E';
++
++export function BrandWordmark({ className, label }: { className?: string; label: string }) {
++  return (
++    <svg viewBox="114.56 575.04 1270.77 313.09" fill="currentColor" role="img" aria-label={label} className={className}>
++      <path transform="translate(105 516)" d="M176.696 309.512c0 8.906-1.54 17.043-4.61 24.406q-4.594 11.05-13.343 19.797-8.3 8.297-20.266 13.36-12.44 5.062-24.406 5.062h-41.89q-11.973 0-24.408-5.062-11.97-5.063-19.797-13.36-8.285-7.827-13.36-19.797-5.062-12.42-5.062-24.406v-42.344h62.625v42.344h41.89v-23.937l-88.39-98.063c-5.531-6.445-9.523-13.047-11.969-19.797q-4.158-10.591-4.156-22.11v-23.937q0-11.965 5.063-24.406 5.074-11.965 13.359-20.25 8.747-8.748 19.797-13.36c7.363-3.07 15.5-4.609 24.406-4.609h41.89c8.907 0 17.04 1.54 24.407 4.61q5.983 2.297 10.813 5.75a107 107 0 0 1 9.453 7.609q4.136 4.595 7.593 9.438 3.453 4.828 5.75 10.812c3.07 7.367 4.61 15.5 4.61 24.406v41.438H114.07v-41.438H72.18v23.938l88.405 98.531q7.81 9.675 11.97 19.344c2.757 6.75 4.14 14.117 4.14 22.094Zm214.56 0v62.625h-115.11q-7.827.002-13.358-5.516c-3.68-3.687-5.516-8.14-5.516-13.359V59.043h62.61v250.469ZM539.041 59.043v313.094h-62.61V59.043Zm256.464 250.938c0 8.898-1.54 16.875-4.61 23.937q-4.612 11.05-13.343 19.797-8.3 8.297-20.266 13.36-12.44 5.062-24.406 5.062h-85.172q-7.828.002-13.36-5.516c-3.68-3.687-5.515-8.14-5.515-13.359V77.934q-.002-7.828 5.515-13.36 5.532-5.53 13.36-5.53h85.172q13.357.001 24.406 4.609 5.983 2.297 10.813 5.75a107 107 0 0 1 9.453 7.609q4.136 4.595 7.593 9.438 3.453 4.828 5.75 10.812c3.07 7.367 4.61 15.5 4.61 24.406Zm-104.063 0h41.438V121.667h-41.439Zm341.173-.469v62.625H904.162q-7.828.002-13.36-5.516c-3.680-3.687-5.515-8.140-5.515-13.359V77.934q-.002-7.828 5.515-13.36 5.532-5.53 13.36-5.53h128.453v62.624h-84.719v62.610h84.719v62.625h-84.719v62.609Zm247.711 0c0 8.906-1.540 17.043-4.610 24.406q-4.594 11.050-13.343 19.797-8.300 8.297-20.266 13.360-12.440 5.062-24.406 5.062h-41.890q-11.973 0-24.408-5.062-11.970-5.063-19.797-13.360-8.285-7.827-13.360-19.797-5.062-12.420-5.062-24.406v-42.344h62.625v42.344h41.890v-23.937l-88.390-98.063c-5.531-6.445-9.523-13.047-11.969-19.797q-4.158-10.591-4.156-22.110v-23.937q0-11.965 5.063-24.406 5.074-11.965 13.359-20.250 8.747-8.748 19.797-13.360c7.363-3.070 15.500-4.609 24.406-4.609h41.890c8.907 0 17.040 1.540 24.407 4.610q5.983 2.297 10.813 5.750a107 107 0 0 1 9.453 7.609q4.136 4.595 7.593 9.438 3.453 4.828 5.750 10.812c3.070 7.367 4.610 15.500 4.610 24.406v41.438H1217.700v-41.438h-41.890v23.938l88.405 98.531q7.810 9.675 11.970 19.344c2.757 6.750 4.140 14.117 4.140 22.094Z" />
++    </svg>
++  );
++}
  import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
  import type { Folder, FolderIcon } from '@/lib/sdk';
  import { format, useLocale } from '@/lib/use-locale';
+@@ -137,8 +145,8 @@ export function Sidebar({
+           draggable={false}
+           className="size-6 shrink-0 select-none rounded-[6px] ring-1 ring-foreground/10"
+         />
+-        <h1 className="font-heading text-[13.5px] font-semibold tracking-tight">
+-          {t.home.appTitle}
++        <h1 className="flex items-center">
++          <BrandWordmark label={t.home.appTitle} className="h-[11px] w-auto" />
+         </h1>
+       </div>
+ 
 diff --git a/src/app/index.html b/src/app/index.html
-index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..ac9629dc851f8f90d4fda99af554dae1f4e28394 100644
+index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..cda926a38cfb812101d9e325095c06002e249003 100644
 --- a/src/app/index.html
 +++ b/src/app/index.html
 @@ -2,9 +2,24 @@
@@ -26,7 +48,7 @@ index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..ac9629dc851f8f90d4fda99af554dae1
    <head>
      <meta charset="UTF-8" />
 -    <link rel="icon" href="./favicon.ico" />
-+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;%3E %3Crect width=&quot;64&quot; height=&quot;64&quot; rx=&quot;15&quot; fill=&quot;%230d1a2b&quot;/%3E %3Cpath d=&quot;M45 16.5 H28 A8.75 8.75 0 0 0 28 34 H36 A8.75 8.75 0 0 1 36 51.5 H22&quot; fill=&quot;none&quot; stroke=&quot;%23eaf2fb&quot; stroke-width=&quot;7&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/%3E %3Ccircle cx=&quot;45&quot; cy=&quot;16.5&quot; r=&quot;6&quot; fill=&quot;%23ffb547&quot;/%3E %3Cpath d=&quot;M23 43.5 L13.5 51.5 L23 59.5 Z&quot; fill=&quot;%23eaf2fb&quot; stroke=&quot;%23eaf2fb&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot;/%3E%3C/svg%3E" />
++    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;%3E%3Crect width=&quot;64&quot; height=&quot;64&quot; rx=&quot;14&quot; fill=&quot;%23000&quot;/%3E%3Csvg x=&quot;11&quot; y=&quot;12&quot; width=&quot;42&quot; height=&quot;40&quot; viewBox=&quot;16.53 50.3 1467.76 1399.41&quot; fill=&quot;%23fff&quot;%3E%3Cg transform=&quot;translate%2816 50%29&quot;%3E%3Cpath d=&quot;M584.441 246.707H12.531a8.646 8.646 0 0 0-8.203 11.383l156.684 470.05a16.65 16.65 0 0 0 15.793 11.387h571.91a8.64 8.64 0 0 0 7.015-3.593 8.64 8.64 0 0 0 1.192-7.793L600.238 258.09a16.65 16.65 0 0 0-15.797-11.383&quot;/%3E%3Cpath d=&quot;M857.633 1153.242h571.91a8.65 8.65 0 0 0 7.016-3.59 8.65 8.65 0 0 0 1.187-7.793l-156.684-470.05a16.65 16.65 0 0 0-15.792-11.383H693.36a8.66 8.66 0 0 0-7.02 3.59 8.65 8.65 0 0 0-1.188 7.793l156.684 470.05a16.645 16.645 0 0 0 15.797 11.383&quot;/%3E%3Cpath d=&quot;M1291.195.297h-898.57a8.64 8.64 0 0 0-7.016 3.594 8.64 8.64 0 0 0-1.191 7.793l156.684 470.05a16.65 16.65 0 0 0 15.796 11.383h898.57a8.646 8.646 0 0 0 8.204-11.383l-156.684-470.05A16.65 16.65 0 0 0 1291.195.297&quot;/%3E%3Cpath d=&quot;M911.102 906.883H12.532a8.65 8.65 0 0 0-7.016 3.59 8.65 8.65 0 0 0-1.188 7.793l156.684 470.05a16.65 16.65 0 0 0 15.793 11.387h898.57a8.64 8.64 0 0 0 7.016-3.594 8.65 8.65 0 0 0 1.191-7.793l-156.684-470.05a16.65 16.65 0 0 0-15.796-11.383&quot;/%3E%3C/g%3E%3C/svg%3E%3C/svg%3E" />
 +    <meta name="description" content="Lessons that move. Animated lesson decks you build in code and present in the browser." />
 +    <meta property="og:type" content="website" />
 +    <meta property="og:site_name" content="Slides" />
@@ -41,13 +63,37 @@ index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..ac9629dc851f8f90d4fda99af554dae1
 +    <meta name="twitter:title" content="Slides" />
 +    <meta name="twitter:description" content="Lessons that move. Animated lesson decks you build in code and present in the browser." />
 +    <meta name="twitter:image" content="https://slides.hanzlah.com/og.png" />
-+    <meta name="theme-color" content="#0d1a2b" />
++    <meta name="theme-color" content="#000000" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 -    <title>open-slide</title>
 +    <title>Slides</title>
      <style>
        html {
          background-color: oklch(0.99 0 0);
+diff --git a/src/app/routes/home-shell.tsx b/src/app/routes/home-shell.tsx
+index 270344a427df83f27995e0fe67b48654c87a38a6..eee9db93180f05e9d9f9efc0bb55233a2a29d5ff 100644
+--- a/src/app/routes/home-shell.tsx
++++ b/src/app/routes/home-shell.tsx
+@@ -18,7 +18,7 @@ import { cn, pad2 } from '@/lib/utils';
+ import { CommandMenuTrigger } from '../components/command/command-menu';
+ import { HomeCommandMenu } from '../components/command/home-command-menu';
+ import { SystemViewIcon } from '../components/sidebar/folder-item';
+-import { ALL_SLIDES_ID, ASSETS_ID, Sidebar, THEMES_ID } from '../components/sidebar/sidebar';
++import { ALL_SLIDES_ID, ASSETS_ID, BrandWordmark, Sidebar, THEMES_ID } from '../components/sidebar/sidebar';
+ import type { FoldersManifest } from '../lib/sdk';
+ import { slideIds } from '../lib/slides';
+ import { themes as themeRegistry } from '../lib/themes';
+@@ -184,7 +184,9 @@ export function HomeShell() {
+       <div className="relative flex min-w-0 flex-1 flex-col md:py-2 md:pr-2">
+         <div className="relative flex min-w-0 flex-1 flex-col overflow-y-auto bg-background md:rounded-[10px] md:shadow-edge md:ring-1 md:ring-foreground/[0.06]">
+           <div className="flex items-center justify-between border-b border-hairline bg-sidebar px-4 py-3 md:hidden">
+-            <h1 className="font-heading text-lg font-bold tracking-tight">{t.home.appTitle}</h1>
++            <h1 className="flex items-center">
++              <BrandWordmark label={t.home.appTitle} className="h-[14px] w-auto" />
++            </h1>
+             <div className="-mr-1.5 flex items-center gap-0.5">
+               <CommandMenuTrigger onClick={openCommandMenu} />
+               <LanguageToggle />
 diff --git a/src/locale/en.ts b/src/locale/en.ts
 index 9a2525a2cd16a7c9b94f8e9e6705a169b4c53feb..9debfccfbe0c6db9491ae2e6a0638247dc992f54 100644
 --- a/src/locale/en.ts
