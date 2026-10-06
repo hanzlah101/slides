@@ -1,0 +1,83 @@
+diff --git a/src/app/components/sidebar/sidebar.tsx b/src/app/components/sidebar/sidebar.tsx
+index 2e82c523558fc37229b9e756dce826fcec8d09d3..aa2b4f6cd9ba1e1e7a155b9f60f642aa1620ef89 100644
+--- a/src/app/components/sidebar/sidebar.tsx
++++ b/src/app/components/sidebar/sidebar.tsx
+@@ -1,7 +1,7 @@
+ import { Plus, Search } from 'lucide-react';
+ import { useEffect, useRef, useState } from 'react';
+ import { toast } from 'sonner';
+-import logo from '@/assets/open-slide.png';
++const logo = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E %3Cdefs%3E %3ClinearGradient id="bg" x1="0" y1="0" x2="1" y2="1"%3E %3Cstop offset="0" stop-color="%231b3157"/%3E %3Cstop offset="1" stop-color="%230d1a2b"/%3E %3C/linearGradient%3E %3C/defs%3E %3Crect width="64" height="64" rx="14" fill="url%28%23bg%29"/%3E %3Crect x="19" y="13" width="34" height="24" rx="4.5" fill="%234fd1e8" fill-opacity="0.35"/%3E %3Crect x="11" y="22" width="38" height="28" rx="5" fill="%23eaf2fb"/%3E %3Cpath d="M30 27.5 L37.5 36 L30 44.5 L22.5 36 Z" fill="%23ffb547"/%3E%3C/svg%3E';
+ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+ import type { Folder, FolderIcon } from '@/lib/sdk';
+ import { format, useLocale } from '@/lib/use-locale';
+diff --git a/src/app/index.html b/src/app/index.html
+index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..fc2b3036309aded5aadf76c01b4a2c82aa87d9b7 100644
+--- a/src/app/index.html
++++ b/src/app/index.html
+@@ -2,9 +2,11 @@
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+-    <link rel="icon" href="./favicon.ico" />
++    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;%3E %3Cdefs%3E %3ClinearGradient id=&quot;bg&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;1&quot;%3E %3Cstop offset=&quot;0&quot; stop-color=&quot;%231b3157&quot;/%3E %3Cstop offset=&quot;1&quot; stop-color=&quot;%230d1a2b&quot;/%3E %3C/linearGradient%3E %3C/defs%3E %3Crect width=&quot;64&quot; height=&quot;64&quot; rx=&quot;14&quot; fill=&quot;url%28%23bg%29&quot;/%3E %3Crect x=&quot;19&quot; y=&quot;13&quot; width=&quot;34&quot; height=&quot;24&quot; rx=&quot;4.5&quot; fill=&quot;%234fd1e8&quot; fill-opacity=&quot;0.35&quot;/%3E %3Crect x=&quot;11&quot; y=&quot;22&quot; width=&quot;38&quot; height=&quot;28&quot; rx=&quot;5&quot; fill=&quot;%23eaf2fb&quot;/%3E %3Cpath d=&quot;M30 27.5 L37.5 36 L30 44.5 L22.5 36 Z&quot; fill=&quot;%23ffb547&quot;/%3E%3C/svg%3E" />
++    <meta name="description" content="Slides — lesson decks built as code." />
++    <meta name="theme-color" content="#0d1a2b" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-    <title>open-slide</title>
++    <title>Slides</title>
+     <style>
+       html {
+         background-color: oklch(0.99 0 0);
+diff --git a/src/locale/en.ts b/src/locale/en.ts
+index 9a2525a2cd16a7c9b94f8e9e6705a169b4c53feb..9debfccfbe0c6db9491ae2e6a0638247dc992f54 100644
+--- a/src/locale/en.ts
++++ b/src/locale/en.ts
+@@ -31,7 +31,7 @@ export const en: Locale = {
+   },
+ 
+   home: {
+-    appTitle: 'open-slide',
++    appTitle: 'Slides',
+     draft: 'Draft',
+     duplicate: 'Duplicate',
+     themes: 'Themes',
+diff --git a/src/locale/ja.ts b/src/locale/ja.ts
+index a39090fa83190b4d253d9340beba86885bd08894..00aaf44b7ab9d947919d44c27d1def184babd6b4 100644
+--- a/src/locale/ja.ts
++++ b/src/locale/ja.ts
+@@ -31,7 +31,7 @@ export const ja: Locale = {
+   },
+ 
+   home: {
+-    appTitle: 'open-slide',
++    appTitle: 'Slides',
+     draft: '下書き',
+     duplicate: '複製',
+     themes: 'テーマ',
+diff --git a/src/locale/zh-cn.ts b/src/locale/zh-cn.ts
+index 7fdf60b1973347cf264067a0ac04621982e8753d..847ddf0584f2d0ade51d53e2cbebb8f91e7cf2c3 100644
+--- a/src/locale/zh-cn.ts
++++ b/src/locale/zh-cn.ts
+@@ -31,7 +31,7 @@ export const zhCN: Locale = {
+   },
+ 
+   home: {
+-    appTitle: 'open-slide',
++    appTitle: 'Slides',
+     draft: '草稿',
+     duplicate: '复制',
+     themes: '主题',
+diff --git a/src/locale/zh-tw.ts b/src/locale/zh-tw.ts
+index 62297dfff278c7491ec10d810bdbd59a0be1be3d..c8ca8a55a64d698c2df9c271a947e505eed6c46a 100644
+--- a/src/locale/zh-tw.ts
++++ b/src/locale/zh-tw.ts
+@@ -31,7 +31,7 @@ export const zhTW: Locale = {
+   },
+ 
+   home: {
+-    appTitle: 'open-slide',
++    appTitle: 'Slides',
+     draft: '草稿',
+     duplicate: '複製',
+     themes: '主題',
