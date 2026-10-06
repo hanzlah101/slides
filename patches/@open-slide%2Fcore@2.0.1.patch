@@ -1,3 +1,6 @@
+diff --git a/node_modules/@open-slide/core/.bun-tag-4d775d41f6cdac7 b/.bun-tag-4d775d41f6cdac7
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/node_modules/@open-slide/core/.bun-tag-7f0329b5bfdd300e b/.bun-tag-7f0329b5bfdd300e
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
@@ -14,7 +17,7 @@ diff --git a/node_modules/@open-slide/core/.bun-tag-eb787789a20b613a b/.bun-tag-
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/src/app/components/sidebar/sidebar.tsx b/src/app/components/sidebar/sidebar.tsx
-index 2e82c523558fc37229b9e756dce826fcec8d09d3..3fcd25ec552918d6e5f9d1fcf900beb4a6bfe79f 100644
+index 2e82c523558fc37229b9e756dce826fcec8d09d3..8a9850ac7ddaeefe7b0c152745afbda67fce6286 100644
 --- a/src/app/components/sidebar/sidebar.tsx
 +++ b/src/app/components/sidebar/sidebar.tsx
 @@ -1,7 +1,26 @@
@@ -22,7 +25,7 @@ index 2e82c523558fc37229b9e756dce826fcec8d09d3..3fcd25ec552918d6e5f9d1fcf900beb4
  import { useEffect, useRef, useState } from 'react';
  import { toast } from 'sonner';
 -import logo from '@/assets/open-slide.png';
-+function BrandIcon({ className }: { className?: string }) {
++export function BrandIcon({ className }: { className?: string }) {
 +  return (
 +    <svg viewBox="16.53 50.3 1467.76 1399.41" fill="currentColor" aria-hidden className={className}>
 +      <g transform="translate(16 50)">
@@ -96,7 +99,7 @@ index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..cda926a38cfb812101d9e325095c0600
        html {
          background-color: oklch(0.99 0 0);
 diff --git a/src/app/routes/home-shell.tsx b/src/app/routes/home-shell.tsx
-index 270344a427df83f27995e0fe67b48654c87a38a6..eee9db93180f05e9d9f9efc0bb55233a2a29d5ff 100644
+index 270344a427df83f27995e0fe67b48654c87a38a6..f4e666ca05428139984aeb43fed92140ee3ae04b 100644
 --- a/src/app/routes/home-shell.tsx
 +++ b/src/app/routes/home-shell.tsx
 @@ -18,7 +18,7 @@ import { cn, pad2 } from '@/lib/utils';
@@ -104,16 +107,17 @@ index 270344a427df83f27995e0fe67b48654c87a38a6..eee9db93180f05e9d9f9efc0bb55233a
  import { HomeCommandMenu } from '../components/command/home-command-menu';
  import { SystemViewIcon } from '../components/sidebar/folder-item';
 -import { ALL_SLIDES_ID, ASSETS_ID, Sidebar, THEMES_ID } from '../components/sidebar/sidebar';
-+import { ALL_SLIDES_ID, ASSETS_ID, BrandWordmark, Sidebar, THEMES_ID } from '../components/sidebar/sidebar';
++import { ALL_SLIDES_ID, ASSETS_ID, BrandIcon, BrandWordmark, Sidebar, THEMES_ID } from '../components/sidebar/sidebar';
  import type { FoldersManifest } from '../lib/sdk';
  import { slideIds } from '../lib/slides';
  import { themes as themeRegistry } from '../lib/themes';
-@@ -184,7 +184,9 @@ export function HomeShell() {
+@@ -184,7 +184,10 @@ export function HomeShell() {
        <div className="relative flex min-w-0 flex-1 flex-col md:py-2 md:pr-2">
          <div className="relative flex min-w-0 flex-1 flex-col overflow-y-auto bg-background md:rounded-[10px] md:shadow-edge md:ring-1 md:ring-foreground/[0.06]">
            <div className="flex items-center justify-between border-b border-hairline bg-sidebar px-4 py-3 md:hidden">
 -            <h1 className="font-heading text-lg font-bold tracking-tight">{t.home.appTitle}</h1>
-+            <h1 className="flex items-center">
++            <h1 className="flex items-center gap-2.5">
++              <BrandIcon className="size-5 shrink-0" />
 +              <BrandWordmark label={t.home.appTitle} className="h-[14px] w-auto" />
 +            </h1>
              <div className="-mr-1.5 flex items-center gap-0.5">
