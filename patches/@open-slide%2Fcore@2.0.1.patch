@@ -1,5 +1,8 @@
+diff --git a/node_modules/@open-slide/core/.bun-tag-9fa703aaaeba1c75 b/.bun-tag-9fa703aaaeba1c75
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/src/app/components/sidebar/sidebar.tsx b/src/app/components/sidebar/sidebar.tsx
-index 2e82c523558fc37229b9e756dce826fcec8d09d3..aa2b4f6cd9ba1e1e7a155b9f60f642aa1620ef89 100644
+index 2e82c523558fc37229b9e756dce826fcec8d09d3..d62ca55508dcd0333fad54dcbd0ed0dc28d4fae0 100644
 --- a/src/app/components/sidebar/sidebar.tsx
 +++ b/src/app/components/sidebar/sidebar.tsx
 @@ -1,7 +1,7 @@
@@ -7,12 +10,12 @@ index 2e82c523558fc37229b9e756dce826fcec8d09d3..aa2b4f6cd9ba1e1e7a155b9f60f642aa
  import { useEffect, useRef, useState } from 'react';
  import { toast } from 'sonner';
 -import logo from '@/assets/open-slide.png';
-+const logo = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E %3Cdefs%3E %3ClinearGradient id="bg" x1="0" y1="0" x2="1" y2="1"%3E %3Cstop offset="0" stop-color="%231b3157"/%3E %3Cstop offset="1" stop-color="%230d1a2b"/%3E %3C/linearGradient%3E %3C/defs%3E %3Crect width="64" height="64" rx="14" fill="url%28%23bg%29"/%3E %3Crect x="19" y="13" width="34" height="24" rx="4.5" fill="%234fd1e8" fill-opacity="0.35"/%3E %3Crect x="11" y="22" width="38" height="28" rx="5" fill="%23eaf2fb"/%3E %3Cpath d="M30 27.5 L37.5 36 L30 44.5 L22.5 36 Z" fill="%23ffb547"/%3E%3C/svg%3E';
++const logo = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E %3Crect width="64" height="64" rx="15" fill="%230d1a2b"/%3E %3Cpath d="M45 16.5 H28 A8.75 8.75 0 0 0 28 34 H36 A8.75 8.75 0 0 1 36 51.5 H22" fill="none" stroke="%23eaf2fb" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/%3E %3Ccircle cx="45" cy="16.5" r="6" fill="%23ffb547"/%3E %3Cpath d="M23 43.5 L13.5 51.5 L23 59.5 Z" fill="%23eaf2fb" stroke="%23eaf2fb" stroke-width="2" stroke-linejoin="round"/%3E%3C/svg%3E';
  import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
  import type { Folder, FolderIcon } from '@/lib/sdk';
  import { format, useLocale } from '@/lib/use-locale';
 diff --git a/src/app/index.html b/src/app/index.html
-index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..fc2b3036309aded5aadf76c01b4a2c82aa87d9b7 100644
+index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..23a01a9b798966e642aefc08c08664c9240d8b7b 100644
 --- a/src/app/index.html
 +++ b/src/app/index.html
 @@ -2,9 +2,11 @@
@@ -20,7 +23,7 @@ index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..fc2b3036309aded5aadf76c01b4a2c82
    <head>
      <meta charset="UTF-8" />
 -    <link rel="icon" href="./favicon.ico" />
-+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;%3E %3Cdefs%3E %3ClinearGradient id=&quot;bg&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;1&quot;%3E %3Cstop offset=&quot;0&quot; stop-color=&quot;%231b3157&quot;/%3E %3Cstop offset=&quot;1&quot; stop-color=&quot;%230d1a2b&quot;/%3E %3C/linearGradient%3E %3C/defs%3E %3Crect width=&quot;64&quot; height=&quot;64&quot; rx=&quot;14&quot; fill=&quot;url%28%23bg%29&quot;/%3E %3Crect x=&quot;19&quot; y=&quot;13&quot; width=&quot;34&quot; height=&quot;24&quot; rx=&quot;4.5&quot; fill=&quot;%234fd1e8&quot; fill-opacity=&quot;0.35&quot;/%3E %3Crect x=&quot;11&quot; y=&quot;22&quot; width=&quot;38&quot; height=&quot;28&quot; rx=&quot;5&quot; fill=&quot;%23eaf2fb&quot;/%3E %3Cpath d=&quot;M30 27.5 L37.5 36 L30 44.5 L22.5 36 Z&quot; fill=&quot;%23ffb547&quot;/%3E%3C/svg%3E" />
++    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;%3E %3Crect width=&quot;64&quot; height=&quot;64&quot; rx=&quot;15&quot; fill=&quot;%230d1a2b&quot;/%3E %3Cpath d=&quot;M45 16.5 H28 A8.75 8.75 0 0 0 28 34 H36 A8.75 8.75 0 0 1 36 51.5 H22&quot; fill=&quot;none&quot; stroke=&quot;%23eaf2fb&quot; stroke-width=&quot;7&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/%3E %3Ccircle cx=&quot;45&quot; cy=&quot;16.5&quot; r=&quot;6&quot; fill=&quot;%23ffb547&quot;/%3E %3Cpath d=&quot;M23 43.5 L13.5 51.5 L23 59.5 Z&quot; fill=&quot;%23eaf2fb&quot; stroke=&quot;%23eaf2fb&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot;/%3E%3C/svg%3E" />
 +    <meta name="description" content="Slides — lesson decks built as code." />
 +    <meta name="theme-color" content="#0d1a2b" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />

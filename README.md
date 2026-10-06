@@ -10,7 +10,7 @@
 
 | Deck | Path | Pages |
 | --- | --- | --- |
-| Flowcharts — Lesson 01 | [`slides/01-flow-charts`](./slides/01-flow-charts/index.tsx) | 16 |
+| Flowcharts — Lesson 01 | [`slides/01-flow-charts`](./slides/01-flow-charts/index.tsx) | 17 |
 
 ## Getting started
 

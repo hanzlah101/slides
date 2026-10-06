@@ -1528,7 +1528,97 @@ const Translate: Page = () => (
   </Frame>
 );
 
-/* ---------- 16 Ending ---------- */
+/* ---------- 16 Group activity ---------- */
+
+const Need = ({ kind, color, text }: { kind: Kind; color: string; text: string }) => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 14, fontSize: 27, color }}>
+    <Sym kind={kind} color={color} w={64} />
+    {text}
+  </div>
+);
+
+const TestCase = ({ n, sum, out }: { n: string; sum: string; out: string }) => (
+  <div style={{ display: 'flex', alignItems: 'center', fontFamily: font.mono, fontSize: 30, marginTop: 20 }}>
+    <span style={{ color: col.violet, width: 150 }}>N = {n}</span>
+    <span style={{ color: col.muted, flex: 1 }}>{sum}</span>
+    <span style={{ color: col.green, fontWeight: 700 }}>{out}</span>
+  </div>
+);
+
+const Task = ({ n, text }: { n: string; text: string }) => (
+  <span style={{ ...card, padding: '18px 28px', fontSize: 30, fontWeight: 700 }}>
+    <span style={{ color: col.amber }}>{n}</span> {text}
+  </span>
+);
+
+const Activity: Page = () => (
+  <Frame>
+    <Body>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <Header eyebrow="GROUP ACTIVITY" title="Sum of the numbers from 1 to N" color={col.coral} />
+        <span
+          className="fc fc-pulse"
+          style={{
+            fontFamily: font.mono,
+            fontSize: 26,
+            fontWeight: 700,
+            letterSpacing: '0.16em',
+            color: col.coral,
+            border: `2px solid ${col.coral}`,
+            borderRadius: 999,
+            padding: '14px 30px',
+            marginTop: 20,
+          }}
+        >
+          YOUR TURN
+        </span>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 700px', gap: 72, marginTop: 56, alignItems: 'start' }}>
+        <div>
+          <p className="fc fc-rise" style={{ ...d(0.2), fontSize: 40, lineHeight: 1.45, margin: 0 }}>
+            The user enters <b style={{ color: col.violet, fontFamily: font.mono }}>N</b>. Add every whole number from{' '}
+            <b style={{ color: col.green }}>1</b> up to <b style={{ color: col.violet, fontFamily: font.mono }}>N</b>{' '}
+            and output the total.
+          </p>
+          <div className="fc fc-rise" style={{ ...d(0.35), display: 'flex', gap: 20, marginTop: 44 }}>
+            <Task n="1" text="Draw the flowchart" />
+            <Task n="2" text="Write the pseudocode" />
+          </div>
+        </div>
+        <Steps>
+          <Step>
+            <div className="fc fc-step" style={{ ...card, padding: '32px 40px' }}>
+              <div style={{ fontFamily: font.mono, fontSize: 22, letterSpacing: '0.18em', color: col.muted }}>
+                CHECK YOUR ANSWER
+              </div>
+              <TestCase n="4" sum="1 + 2 + 3 + 4" out="10" />
+              <TestCase n="6" sum="1 + 2 + … + 6" out="21" />
+              <TestCase n="1" sum="1" out="1" />
+            </div>
+          </Step>
+        </Steps>
+      </div>
+      <Steps>
+        <Step>
+          <div className="fc fc-step" style={{ marginTop: 56 }}>
+            <div style={{ fontFamily: font.mono, fontSize: 22, letterSpacing: '0.18em', color: col.muted }}>
+              HINT · YOUR FLOWCHART NEEDS
+            </div>
+            <div style={{ display: 'flex', gap: 40, marginTop: 20 }}>
+              <Need kind="oval" color={col.green} text="Start & End" />
+              <Need kind="para" color={col.violet} text="Input N" />
+              <Need kind="rect" color={col.cyan} text="Running total" />
+              <Need kind="diamond" color={col.amber} text="Loop check" />
+              <Need kind="para" color={col.violet} text="Output total" />
+            </div>
+          </div>
+        </Step>
+      </Steps>
+    </Body>
+  </Frame>
+);
+
+/* ---------- 17 Ending ---------- */
 
 const Done = ({ text, delay }: { text: string; delay: number }) => (
   <div style={{ display: 'flex', alignItems: 'center', gap: 20, fontSize: 30, marginTop: 18 }}>
@@ -1683,6 +1773,7 @@ export default [
   ForLoop,
   RepeatLoop,
   Translate,
+  Activity,
   Ending,
 ] satisfies Page[];
 
@@ -1710,5 +1801,9 @@ Note: FOR sets count itself, so a separate count = 0 line isn't needed.`,
   `REPEAT … UNTIL — condition-controlled. Draw it: Input num → diamond "num = 0?" — No loops back, Yes → End.
 Contrast with FOR: fixed count vs. stop on a condition.`,
   `Converting both ways: each symbol maps to a pseudocode keyword. Reveal one row at a time.`,
+  `Group activity. Groups of 3–4; they draw the flowchart and write the pseudocode on paper — don't show an answer on screen.
+Press → to reveal the test cases once groups have a draft, and → again for the hint only if they're stuck.
+Model answer to draw on the board afterwards: START → INPUT N → Total = 0 → FOR i = 1 TO N: Total = Total + i → NEXT i → OUTPUT Total → END.
+Then take questions.`,
   `Close: recap the three structures and the six objectives as the ticks animate in.`,
 ];
