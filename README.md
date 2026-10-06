@@ -1,64 +1,57 @@
-# open-slide workspace
+<p align="center">
+  <img src="./assets/logo.svg" width="96" alt="Slides logo" />
+</p>
 
-Slides as React components. Each slide lives under `slides/<id>/index.tsx` and default-exports an array of page components. The `@open-slide/core` runtime handles layout, scaling, navigation, thumbnails, and fullscreen play mode — you just write the pages.
+<h1 align="center">Slides</h1>
+
+<p align="center">Lesson decks written as React code — animated, presentable in the browser, exportable to PowerPoint.</p>
+
+## Decks
+
+| Deck | Path | Pages |
+| --- | --- | --- |
+| Flowcharts — Lesson 01 | [`slides/01-flow-charts`](./slides/01-flow-charts/index.tsx) | 16 |
 
 ## Getting started
 
 ```bash
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
-Then open the dev server and edit `slides/getting-started/index.tsx`, or create a new slide at `slides/<your-slide>/index.tsx`.
-
-## Scripts
+Open `http://localhost:5173`, pick a deck, and press `F` to present.
 
 | Command | Description |
 | --- | --- |
-| `pnpm dev` | Start the dev server with hot reload. |
-| `pnpm build` | Build a static bundle you can deploy. |
-| `pnpm preview` | Preview the built bundle locally. |
+| `bun run dev` | Dev server with hot reload |
+| `bun run build` | Static build into `dist/` |
+| `bun run preview` | Serve the built `dist/` locally |
 
-## Authoring a slide
+## Presenting
+
+- `→` / `Space` next step or page, `←` back, `F` fullscreen, `Esc` exit.
+- Speaker notes live in each deck's `notes` export and show in presenter view.
+- Export to PowerPoint from the **Download** menu (animations are not carried over).
+
+## Adding a deck
+
+Create `slides/<id>/index.tsx` that default-exports an array of page components. Every page renders on a fixed 1920 × 1080 canvas.
 
 ```tsx
-// slides/my-slide/index.tsx
 import type { Page, SlideMeta } from '@open-slide/core';
 
-const Cover: Page = () => (
-  <div style={{ width: '100%', height: '100%' }}>Hello</div>
-);
+const Cover: Page = () => <div style={{ width: '100%', height: '100%' }}>Hello</div>;
 
-export const meta: SlideMeta = { title: 'My slide' };
+export const meta: SlideMeta = { title: 'My deck' };
 export default [Cover] satisfies Page[];
 ```
 
-Every page renders into a fixed **1920 × 1080** canvas — design with absolute pixel values. Put images, videos, and fonts under `slides/<id>/assets/` and import them directly.
+See [`AGENTS.md`](./AGENTS.md) for the full authoring guide.
 
-See [`CLAUDE.md`](./CLAUDE.md) for the full authoring guide.
+## Deploy
 
-## Navigation
+`vercel.json` is preconfigured — run `bunx vercel --prod`, or import the repo on Vercel.
 
-- Arrow keys / PageUp / PageDown move between pages.
-- `F` enters fullscreen play mode; Esc exits.
-- In play mode: Space / → next, ← prev.
+## Branding
 
-## Claude Code integration
-
-This workspace ships with Claude Code skills preconfigured under `.claude/skills/` and `.agents/skills/`. Ask Claude Code to "make slides about X" and the `create-slide` skill takes over. Use `apply-comments` to iterate via inspector-style markers inside your source.
-
-## Config
-
-Optional `open-slide.config.ts` at the workspace root:
-
-```ts
-import type { OpenSlideConfig } from '@open-slide/core';
-
-const openSlideConfig: OpenSlideConfig = {
-  port: 5173,
-};
-
-export default openSlideConfig;
-```
-
-Supported fields: `slidesDir`, `port`.
+Built on [open-slide](https://open-slide.dev). The app name, tab title, favicon and sidebar logo are set by [`patches/@open-slide%2Fcore@2.0.1.patch`](./patches), which `bun install` applies automatically. Upgrading `@open-slide/core` means regenerating it with `bun patch @open-slide/core`.
