@@ -1,3 +1,6 @@
+diff --git a/node_modules/@open-slide/core/.bun-tag-7f0329b5bfdd300e b/.bun-tag-7f0329b5bfdd300e
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/node_modules/@open-slide/core/.bun-tag-9fa703aaaeba1c75 b/.bun-tag-9fa703aaaeba1c75
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
@@ -15,16 +18,29 @@ index 2e82c523558fc37229b9e756dce826fcec8d09d3..d62ca55508dcd0333fad54dcbd0ed0dc
  import type { Folder, FolderIcon } from '@/lib/sdk';
  import { format, useLocale } from '@/lib/use-locale';
 diff --git a/src/app/index.html b/src/app/index.html
-index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..23a01a9b798966e642aefc08c08664c9240d8b7b 100644
+index e2b4bdb21a5be83882836ca8ae04e346e8a3230a..ac9629dc851f8f90d4fda99af554dae1f4e28394 100644
 --- a/src/app/index.html
 +++ b/src/app/index.html
-@@ -2,9 +2,11 @@
+@@ -2,9 +2,24 @@
  <html lang="en">
    <head>
      <meta charset="UTF-8" />
 -    <link rel="icon" href="./favicon.ico" />
 +    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;%3E %3Crect width=&quot;64&quot; height=&quot;64&quot; rx=&quot;15&quot; fill=&quot;%230d1a2b&quot;/%3E %3Cpath d=&quot;M45 16.5 H28 A8.75 8.75 0 0 0 28 34 H36 A8.75 8.75 0 0 1 36 51.5 H22&quot; fill=&quot;none&quot; stroke=&quot;%23eaf2fb&quot; stroke-width=&quot;7&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/%3E %3Ccircle cx=&quot;45&quot; cy=&quot;16.5&quot; r=&quot;6&quot; fill=&quot;%23ffb547&quot;/%3E %3Cpath d=&quot;M23 43.5 L13.5 51.5 L23 59.5 Z&quot; fill=&quot;%23eaf2fb&quot; stroke=&quot;%23eaf2fb&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot;/%3E%3C/svg%3E" />
-+    <meta name="description" content="Slides — lesson decks built as code." />
++    <meta name="description" content="Lessons that move. Animated lesson decks you build in code and present in the browser." />
++    <meta property="og:type" content="website" />
++    <meta property="og:site_name" content="Slides" />
++    <meta property="og:title" content="Slides" />
++    <meta property="og:description" content="Lessons that move. Animated lesson decks you build in code and present in the browser." />
++    <meta property="og:url" content="https://slides.hanzlah.com/" />
++    <meta property="og:image" content="https://slides.hanzlah.com/og.png" />
++    <meta property="og:image:width" content="1200" />
++    <meta property="og:image:height" content="630" />
++    <meta property="og:image:alt" content="Slides: Lessons that move." />
++    <meta name="twitter:card" content="summary_large_image" />
++    <meta name="twitter:title" content="Slides" />
++    <meta name="twitter:description" content="Lessons that move. Animated lesson decks you build in code and present in the browser." />
++    <meta name="twitter:image" content="https://slides.hanzlah.com/og.png" />
 +    <meta name="theme-color" content="#0d1a2b" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 -    <title>open-slide</title>
