@@ -7,16 +7,30 @@ index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2
 diff --git a/node_modules/@open-slide/core/.bun-tag-b2f9bfda17bf44f9 b/.bun-tag-b2f9bfda17bf44f9
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/node_modules/@open-slide/core/.bun-tag-eb787789a20b613a b/.bun-tag-eb787789a20b613a
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/src/app/components/sidebar/sidebar.tsx b/src/app/components/sidebar/sidebar.tsx
-index 2e82c523558fc37229b9e756dce826fcec8d09d3..6b254969611393c880b927fd089b0d58898f5fb2 100644
+index 2e82c523558fc37229b9e756dce826fcec8d09d3..1253b849a53a53547f89882fcb22d6817e1055ff 100644
 --- a/src/app/components/sidebar/sidebar.tsx
 +++ b/src/app/components/sidebar/sidebar.tsx
-@@ -1,7 +1,15 @@
+@@ -1,7 +1,26 @@
  import { Plus, Search } from 'lucide-react';
  import { useEffect, useRef, useState } from 'react';
  import { toast } from 'sonner';
 -import logo from '@/assets/open-slide.png';
-+const logo = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="14" fill="%23000"/%3E%3Csvg x="11" y="12" width="42" height="40" viewBox="16.53 50.3 1467.76 1399.41" fill="%23fff"%3E%3Cg transform="translate%2816 50%29"%3E%3Cpath d="M584.441 246.707H12.531a8.646 8.646 0 0 0-8.203 11.383l156.684 470.05a16.65 16.65 0 0 0 15.793 11.387h571.91a8.64 8.64 0 0 0 7.015-3.593 8.64 8.64 0 0 0 1.192-7.793L600.238 258.09a16.65 16.65 0 0 0-15.797-11.383"/%3E%3Cpath d="M857.633 1153.242h571.91a8.65 8.65 0 0 0 7.016-3.59 8.65 8.65 0 0 0 1.187-7.793l-156.684-470.05a16.65 16.65 0 0 0-15.792-11.383H693.36a8.66 8.66 0 0 0-7.02 3.59 8.65 8.65 0 0 0-1.188 7.793l156.684 470.05a16.645 16.645 0 0 0 15.797 11.383"/%3E%3Cpath d="M1291.195.297h-898.57a8.64 8.64 0 0 0-7.016 3.594 8.64 8.64 0 0 0-1.191 7.793l156.684 470.05a16.65 16.65 0 0 0 15.796 11.383h898.57a8.646 8.646 0 0 0 8.204-11.383l-156.684-470.05A16.65 16.65 0 0 0 1291.195.297"/%3E%3Cpath d="M911.102 906.883H12.532a8.65 8.65 0 0 0-7.016 3.59 8.65 8.65 0 0 0-1.188 7.793l156.684 470.05a16.65 16.65 0 0 0 15.793 11.387h898.57a8.64 8.64 0 0 0 7.016-3.594 8.65 8.65 0 0 0 1.191-7.793l-156.684-470.05a16.65 16.65 0 0 0-15.796-11.383"/%3E%3C/g%3E%3C/svg%3E%3C/svg%3E';
++function BrandIcon({ className }: { className?: string }) {
++  return (
++    <svg viewBox="16.53 50.3 1467.76 1399.41" fill="currentColor" aria-hidden className={className}>
++      <g transform="translate(16 50)">
++        <path d="M584.441 246.707H12.531a8.646 8.646 0 0 0-8.203 11.383l156.684 470.05a16.65 16.65 0 0 0 15.793 11.387h571.91a8.64 8.64 0 0 0 7.015-3.593 8.64 8.64 0 0 0 1.192-7.793L600.238 258.09a16.65 16.65 0 0 0-15.797-11.383" />
++        <path d="M857.633 1153.242h571.91a8.65 8.65 0 0 0 7.016-3.59 8.65 8.65 0 0 0 1.187-7.793l-156.684-470.05a16.65 16.65 0 0 0-15.792-11.383H693.36a8.66 8.66 0 0 0-7.02 3.59 8.65 8.65 0 0 0-1.188 7.793l156.684 470.05a16.645 16.645 0 0 0 15.797 11.383" />
++        <path d="M1291.195.297h-898.57a8.64 8.64 0 0 0-7.016 3.594 8.64 8.64 0 0 0-1.191 7.793l156.684 470.05a16.65 16.65 0 0 0 15.796 11.383h898.57a8.646 8.646 0 0 0 8.204-11.383l-156.684-470.05A16.65 16.65 0 0 0 1291.195.297" />
++        <path d="M911.102 906.883H12.532a8.65 8.65 0 0 0-7.016 3.59 8.65 8.65 0 0 0-1.188 7.793l156.684 470.05a16.65 16.65 0 0 0 15.793 11.387h898.57a8.64 8.64 0 0 0 7.016-3.594 8.65 8.65 0 0 0 1.191-7.793l-156.684-470.05a16.65 16.65 0 0 0-15.796-11.383" />
++      </g>
++    </svg>
++  );
++}
 +
 +export function BrandWordmark({ className, label }: { className?: string; label: string }) {
 +  return (
@@ -28,12 +42,20 @@ index 2e82c523558fc37229b9e756dce826fcec8d09d3..6b254969611393c880b927fd089b0d58
  import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
  import type { Folder, FolderIcon } from '@/lib/sdk';
  import { format, useLocale } from '@/lib/use-locale';
-@@ -137,8 +145,8 @@ export function Sidebar({
-           draggable={false}
-           className="size-6 shrink-0 select-none rounded-[6px] ring-1 ring-foreground/10"
-         />
+@@ -130,15 +149,9 @@ export function Sidebar({
+   return (
+     <aside className="group/side relative flex h-full w-[16.5rem] shrink-0 flex-col bg-sidebar text-sidebar-foreground">
+       <div className="flex items-center gap-2.5 px-4 pt-4 pb-3">
+-        <img
+-          src={logo}
+-          alt=""
+-          aria-hidden
+-          draggable={false}
+-          className="size-6 shrink-0 select-none rounded-[6px] ring-1 ring-foreground/10"
+-        />
 -        <h1 className="font-heading text-[13.5px] font-semibold tracking-tight">
 -          {t.home.appTitle}
++        <BrandIcon className="size-5 shrink-0" />
 +        <h1 className="flex items-center">
 +          <BrandWordmark label={t.home.appTitle} className="h-[11px] w-auto" />
          </h1>
