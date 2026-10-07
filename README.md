@@ -12,6 +12,7 @@
 | Deck | Path | Pages |
 | --- | --- | --- |
 | Flowcharts, Lesson 01 | [`slides/01-flow-charts`](./slides/01-flow-charts/index.tsx) | 17 |
+| Set Precision, Lesson 02 | [`slides/02-set-precision`](./slides/02-set-precision/index.tsx) | 17 |
 
 ## Getting started
 
