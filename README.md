@@ -13,6 +13,8 @@
 | --- | --- | --- |
 | Flowcharts, Lesson 01 | [`slides/01-flow-charts`](./slides/01-flow-charts/index.tsx) | 17 |
 | Set Precision, Lesson 02 | [`slides/02-set-precision`](./slides/02-set-precision/index.tsx) | 17 |
+| Pólya’s Method, Lesson 03 | [`slides/03-polya-method`](./slides/03-polya-method/index.tsx) | 15 |
+| Conditional Statements, Lesson 04 | [`slides/04-conditional-statements`](./slides/04-conditional-statements/index.tsx) | 17 |
 
 ## Getting started
 
